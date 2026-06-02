@@ -12,8 +12,8 @@ public class Mavenproject1 {
 
     public static void main(String[] args) {
         
-        BasicExperiments.read_files_into_object();
-        
+        //BasicExperiments.read_files_into_object();
+        BasicExperiments.assigning_references();
         
         
     }

@@ -37,14 +37,26 @@ public final class BasicExperiments {
             for (String line: contents) {
                 System.out.println(line);
             }
-            
-            
-            
-            
+
             
         } catch (Exception e){
             System.out.println("Error:"+e.getMessage());
         }
         
     }
+    
+    public static void assigning_references(){ 
+        Container container = new Container("referenced",10);
+        container.store("package 1 - stored with original reference");
+        Container otherContainer = container;
+        System.out.println(otherContainer.contents());
+        modify_in_method(container);
+        System.out.println(container.contents());
+        
+    } //Result: Both actions performed on 'copies' and inside methods equally apply to the original object.
+    private static void modify_in_method(Container container){
+        container.store("package 2 - stored in method");
+    }
+    
+    
 }

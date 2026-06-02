@@ -25,7 +25,7 @@ public class Container {
     }
     public Boolean space_left() {
         
-            return (this.lines.size()+1 < this.capacity);
+            return (this.lines.size() < this.capacity);
     }
     public ArrayList<String> contents(){
         return this.lines;
