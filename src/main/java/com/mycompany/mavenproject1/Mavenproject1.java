@@ -12,8 +12,11 @@ public class Mavenproject1 {
 
     public static void main(String[] args) {
         
-        //BasicExperiments.read_files_into_object();
-        BasicExperiments.assigning_references();
+        //BasicExperiments.experiment_read_lines_into_object();
+        //BasicExperiments.experiment_assigning_references();
+        //BasicExperiments.experiment_hashmaps();
+        //BasicExperiments.experiment_custom_equals();
+        BasicExperiments.experiment_custom_hashcodes();
         
         
     }

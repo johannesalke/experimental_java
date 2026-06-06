@@ -30,4 +30,30 @@ public class Container {
     public ArrayList<String> contents(){
         return this.lines;
     }
+    
+    @Override
+    public boolean equals(Object obj){
+        if (obj == this) {
+        return true;
+                
+        }
+        if (!(obj instanceof Container)) {
+            return false;
+        }
+        
+        Container other = (Container) obj;
+        
+        if (this.label.equals( other.label)  &&
+            this.capacity.equals(other.capacity)&&
+            this.lines.equals(other.lines)) {
+            return true;
+        }
+        return false;
+    
+    }
+    
+    @Override
+    public int hashCode() {
+        return this.label.hashCode();
+    }
 }
