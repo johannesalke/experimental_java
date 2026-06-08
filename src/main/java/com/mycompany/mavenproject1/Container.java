@@ -9,27 +9,50 @@ import java.util.ArrayList;
 /**
  *
  * @author johan
+ * @param <T>
  */
-public class Container {
+public class Container<T> implements Stack<T>{
     public String label;
     public Integer capacity;
-    public ArrayList<String> lines;
+    public ArrayList<T> lines;
     
     public Container(String s,Integer capacity){
         this.label = s;
         this.capacity = capacity;
         this.lines = new ArrayList<>();
     }
-    public void store(String line) {
+    public void store(T line) {
         this.lines.add(line);
     }
     public Boolean space_left() {
         
             return (this.lines.size() < this.capacity);
     }
-    public ArrayList<String> contents(){
+    public ArrayList<T> contents(){
         return this.lines;
     }
+    
+    @Override
+    public void push(T item) {
+        this.store(item);
+    }
+    
+    @Override
+    public T pop(){
+        
+        return this.lines.removeLast();
+    }
+    
+    @Override
+    public int size(){
+        return this.lines.size();
+    }
+    
+    
+    
+    
+    
+    
     
     @Override
     public boolean equals(Object obj){
@@ -56,4 +79,9 @@ public class Container {
     public int hashCode() {
         return this.label.hashCode();
     }
+    
+    
 }
+
+
+

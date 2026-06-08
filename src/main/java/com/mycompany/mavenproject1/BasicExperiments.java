@@ -17,7 +17,7 @@ public final class BasicExperiments {
     
     
     
-    public static void experiment_read_file_into_object(){
+    public static void experiment_read_file_into_object(){ //The first few experiments do not use type specification because generics were added to the class Container at a later date.
         
         Container container = new Container("test",5);
         
@@ -111,11 +111,25 @@ public final class BasicExperiments {
         System.out.println("c4 in hashmap:" + map.get(c5));
         System.out.println("c1 in hashmap:" + map.get(c1));
         System.out.println("=>This time c1 is overwritten, because both lable and size are the same. ");
-
-        
-        
-        
                 
     }
     
-}
+    public static void experiment_generics_and_interfaces() {
+        Container<String> jokes;
+        jokes = new Container<>("Jokes",10);
+        Stack stack = jokes;
+        //stack.store("test"); //This doesn't work because an interface variable can only use the methods specified in the interface.
+        //Container<String> lines = stack; //This doesn't work because an interface can't be case to an object
+        jokes.store("Best Gorilla joke of 1897");
+        stack.push("But doctor, I am Pagliacci");
+        
+        
+        pop_and_print(stack);
+        pop_and_print(jokes);
+
+    }
+    private static void pop_and_print(Stack stack){
+        System.out.println(stack.pop());
+    }
+        
+    }
