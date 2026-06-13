@@ -131,5 +131,28 @@ public final class BasicExperiments {
     private static void pop_and_print(Stack stack){
         System.out.println(stack.pop());
     }
+
+    public static void experiment_streams_one() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Test");
+        list.add("Other test");
+        list.add("Final final test");
+        var listLengths = list.stream().mapToInt(s -> s.length());
+        System.out.println(listLengths.summaryStatistics());
+//        System.out.println("Average string length: "+listLengths.average());
+//        System.out.println("Total list length: "+ listLengths.sum());
+        //Apparently each step in the stream can only be operated upon once, and trying to do two things with the same intermediary product
+        // produces an error.
+        
         
     }
+
+
+
+
+
+
+
+
+
+}
