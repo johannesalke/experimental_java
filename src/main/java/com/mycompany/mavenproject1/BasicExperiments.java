@@ -119,7 +119,7 @@ public final class BasicExperiments {
         jokes = new Container<>("Jokes",10);
         Stack stack = jokes;
         //stack.store("test"); //This doesn't work because an interface variable can only use the methods specified in the interface.
-        //Container<String> lines = stack; //This doesn't work because an interface can't be case to an object
+        //Container<String> items = stack; //This doesn't work because an interface can't be case to an object
         jokes.store("Best Gorilla joke of 1897");
         stack.push("But doctor, I am Pagliacci");
         
@@ -145,6 +145,16 @@ public final class BasicExperiments {
         // produces an error.
         
         
+    }
+
+    public static void experiment_comparable_containers() {
+        Container<String> c1 = new Container<>("container 1",5);
+        Container<String> c2 = new Container<>("Container 2",5);
+        c1.push("Item 1"); c1.push("Item 2"); c2.push("Item 2-1");
+
+        System.out.println(c1.compareTo(c2));
+
+
     }
 
 

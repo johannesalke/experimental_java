@@ -18,8 +18,10 @@ public class Mavenproject1 {
         //BasicExperiments.experiment_custom_equals();
         //BasicExperiments.experiment_custom_hashcodes();
         //BasicExperiments.experiment_generics_and_interfaces();
-        BasicExperiments.experiment_streams_one();
-        
-        
+        //BasicExperiments.experiment_streams_one();
+
+        BasicExperiments.experiment_comparable_containers();
+
+
     }
 }

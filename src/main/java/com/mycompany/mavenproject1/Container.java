@@ -11,25 +11,25 @@ import java.util.ArrayList;
  * @author johan
  * @param <T>
  */
-public class Container<T> implements Stack<T>{
+public class Container<T> implements Stack<T>, Comparable<Container<T>>{
     public String label;
     public Integer capacity;
-    public ArrayList<T> lines;
+    public ArrayList<T> items;
     
     public Container(String s,Integer capacity){
         this.label = s;
         this.capacity = capacity;
-        this.lines = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
     public void store(T line) {
-        this.lines.add(line);
+        this.items.add(line);
     }
     public Boolean space_left() {
         
-            return (this.lines.size() < this.capacity);
+            return (this.items.size() < this.capacity);
     }
     public ArrayList<T> contents(){
-        return this.lines;
+        return this.items;
     }
     
     @Override
@@ -40,15 +40,18 @@ public class Container<T> implements Stack<T>{
     @Override
     public T pop(){
         
-        return this.lines.removeLast();
+        return this.items.removeLast();
     }
     
     @Override
     public int size(){
-        return this.lines.size();
+        return this.items.size();
     }
     
-    
+    @Override
+    public int compareTo(Container<T> other) {
+        return this.items.size() - other.items.size();
+    }
     
     
     
@@ -68,7 +71,7 @@ public class Container<T> implements Stack<T>{
         
         if (this.label.equals( other.label)  &&
             this.capacity.equals(other.capacity)&&
-            this.lines.equals(other.lines)) {
+            this.items.equals(other.items)) {
             return true;
         }
         return false;
