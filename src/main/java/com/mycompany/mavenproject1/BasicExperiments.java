@@ -6,6 +6,7 @@ package com.mycompany.mavenproject1;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.HashMap;
 
@@ -153,6 +154,35 @@ public final class BasicExperiments {
         c1.push("Item 1"); c1.push("Item 2"); c2.push("Item 2-1");
 
         System.out.println(c1.compareTo(c2));
+
+
+    }
+
+    public static void experiment_stream_lambda_sorting(){
+        var c1 = new Container<String>("Blackbeard", 10);
+        c1.push("Gold");
+        c1.push("Treasure Map");
+        var c2 = new Container<String>("Bartholomew Roberts",5);
+        c2.push("Saffron");
+        var c3 = new Container<String>("Francis Drake", 5);
+        c3.push("Exotic tea");
+
+        ArrayList<Container<String>> arrr = new ArrayList<>();
+        arrr.add(c2);
+        arrr.add(c1); //Putting one of the smaller sized containers before and after, so sorting has an effect regardless of ascending or descending order.
+        arrr.add(c3);
+        arrr.stream().forEach(a -> System.out.println(a.label));
+        Collections.sort(arrr,(a, b)-> a.compareTo(b));
+        System.out.println("");
+        arrr.stream().forEach(a -> System.out.println(a.label));
+
+    }
+
+    public static void experiment_enum() {
+        RiskLevel sl = RiskLevel.valueOf("HIGH"); //Needs to be the exact same. Capitalization is important!
+        System.out.println(sl);
+        System.out.println(sl.ordinal());
+        System.out.println(sl.higherRiskLevel());
 
 
     }

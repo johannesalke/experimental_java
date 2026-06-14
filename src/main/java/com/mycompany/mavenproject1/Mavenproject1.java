@@ -20,7 +20,9 @@ public class Mavenproject1 {
         //BasicExperiments.experiment_generics_and_interfaces();
         //BasicExperiments.experiment_streams_one();
 
-        BasicExperiments.experiment_comparable_containers();
+        //BasicExperiments.experiment_comparable_containers();
+        //BasicExperiments.experiment_stream_lambda_sorting();
+        BasicExperiments.experiment_enum();
 
 
     }

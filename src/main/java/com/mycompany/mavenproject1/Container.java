@@ -15,11 +15,13 @@ public class Container<T> implements Stack<T>, Comparable<Container<T>>{
     public String label;
     public Integer capacity;
     public ArrayList<T> items;
+    public RiskLevel riskLevel;
     
     public Container(String s,Integer capacity){
         this.label = s;
         this.capacity = capacity;
         this.items = new ArrayList<>();
+        this.riskLevel = RiskLevel.LOW;
     }
     public void store(T line) {
         this.items.add(line);
