@@ -4,6 +4,11 @@
  */
 package com.mycompany.mavenproject1;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 import com.mycompany.mavenproject1.domain.Laboratory;
@@ -240,7 +245,19 @@ public final class BasicExperiments {
             System.out.println("Error because of non-existent file: " + e + " | "+ e.getMessage());
         }
 
+    }
 
+    public static void experiment_make_file(){
+        try {
+
+            //Path path = Files.createFile(Path.of("newFile.txt"));
+            FileWriter writer = new FileWriter("newFile.txt");
+            writer.write("This is a test line.");
+            writer.close();
+
+        } catch (Exception e) {
+            System.out.println("Oops: "+e);
+        }
     }
 
 
