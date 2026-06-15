@@ -5,10 +5,7 @@
 package com.mycompany.mavenproject1;
 
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  *
@@ -184,6 +181,40 @@ public final class BasicExperiments {
         System.out.println(sl.ordinal());
         System.out.println(sl.higherRiskLevel());
 
+
+    }
+
+    public static void experiment_iterator() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Word 1");
+        list.add("Word 2");
+        list.add("error");
+        list.add("Word 4");
+
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+
+        }
+        iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+            if (iterator.next()== "error") {
+                // removing from the list the element returned by the previous next-method call
+                iterator.remove();
+            }
+        }
+        System.out.println(list);
+
+
+
+
+    }
+
+    private static void remove_errors(Iterator iterator,String s) {
+        if (s == "error") {
+            iterator.remove();
+        }
 
     }
 

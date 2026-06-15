@@ -22,7 +22,9 @@ public class Mavenproject1 {
 
         //BasicExperiments.experiment_comparable_containers();
         //BasicExperiments.experiment_stream_lambda_sorting();
-        BasicExperiments.experiment_enum();
+        //BasicExperiments.experiment_enum();
+        BasicExperiments.experiment_iterator();
+
 
 
     }
