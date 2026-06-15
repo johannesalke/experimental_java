@@ -6,6 +6,7 @@ package com.mycompany.mavenproject1;
 
 import java.nio.file.Paths;
 import java.util.*;
+import com.mycompany.mavenproject1.domain.Laboratory;
 
 /**
  *
@@ -218,7 +219,29 @@ public final class BasicExperiments {
 
     }
 
+    public static void experiment_imported_package() {
+        Laboratory.develop("Boots");
+    }
 
+    public static void experiment_exceptions(){
+
+
+        try (Scanner scanner = new Scanner(Paths.get("file.txt"))) {
+            while (scanner.hasNext()) {
+                System.out.println(scanner.nextLine());
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        try (Scanner scanner = new Scanner(Paths.get("fakefile.txt"))) {
+            System.out.printf(scanner.nextLine());
+        } catch (Exception e) {
+            System.out.println("Error because of non-existent file: " + e + " | "+ e.getMessage());
+        }
+
+
+    }
 
 
 
