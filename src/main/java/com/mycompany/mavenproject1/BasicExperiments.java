@@ -243,15 +243,25 @@ public final class BasicExperiments {
             System.out.printf(scanner.nextLine());
         } catch (Exception e) {
             System.out.println("Error because of non-existent file: " + e + " | "+ e.getMessage());
+            e.printStackTrace();
         }
-
+        try {
+            arewecoolyet(); //Having "throws exception in the method signature means the user will be forced to handle that exception!"
+        } catch (Exception e){
+            System.out.println("You shouldn't be here.");
+        }
     }
+
+    private static void arewecoolyet() throws Exception{
+        System.out.println("Are we cool yet?");
+    }
+
 
     public static void experiment_make_file(){
         try {
 
             //Path path = Files.createFile(Path.of("newFile.txt"));
-            FileWriter writer = new FileWriter("newFile.txt");
+            FileWriter writer = new FileWriter("newFile2.txt");
             writer.write("This is a test line.");
             writer.close();
 
@@ -259,6 +269,8 @@ public final class BasicExperiments {
             System.out.println("Oops: "+e);
         }
     }
+
+
 
 
 

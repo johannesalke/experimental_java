@@ -4,11 +4,15 @@
 
 package com.mycompany.mavenproject1;
 
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.nio.file.Paths;
 
-public class Mavenproject1 {
+
+public class Mavenproject1 extends Application {
 
     public static void main(String[] args) {
         
@@ -26,9 +30,18 @@ public class Mavenproject1 {
         //BasicExperiments.experiment_iterator();
         //BasicExperiments.experiment_imported_package();
         //BasicExperiments.experiment_exceptions();
-        BasicExperiments.experiment_make_file();
-
-
+        //BasicExperiments.experiment_make_file();
+        launch(Mavenproject1.class);
 
     }
+
+
+    //I don't like putting other stuff in the main function of an experimental project, but it's unavoidable here.
+    //Using javafx requires that the main function extends the application class.
+    @Override
+    public void start(Stage window) {
+        window.setTitle("Hello World!");
+        window.show();
+    }
+
 }
